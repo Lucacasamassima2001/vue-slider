@@ -45,6 +45,8 @@ const app = Vue.createApp({
         setActiveIndex(index) { 
             this.activeIndex = index;
         },
+        
+        
 
     }
 });

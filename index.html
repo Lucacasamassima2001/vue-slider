@@ -28,10 +28,10 @@
                         <i @click="showPrevSlide" class="bi bi-arrow-up-circle-fill btn btn-prev"></i>
                         <i @click="showNextSlide" class="bi bi-arrow-down-circle-fill btn btn-next"></i>
                     </div>
-                    <div v-for="(element, index) in slides" class="thumb" 
-                    :class="{active: index == activeIndex}" @click="setActiveIndex(index)" >
-                        <img class="thumbImg" :src="element.image" alt="">
-                    </div>
+                    
+                        <img v-for="(element, index) in slides" class="thumb" 
+                        :class="{active: index == activeIndex}" @click="setActiveIndex(index)" :src="element.image" alt="">
+                    
                 </div>
             </div>
         </div>
