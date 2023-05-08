@@ -25,31 +25,47 @@ const app = Vue.createApp({
                     text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
                 },
             ]
+
         }
     },
     methods: {
         showNextSlide () {
             this.activeIndex++
-
+        
         if (this.activeIndex >= this.slides.length) {
         this.activeIndex = 0;
         }},
-
+        
         showPrevSlide () {
             this.activeIndex--
-
+        
         if (this.activeIndex < 0) {
             this.activeIndex = this.slides.length - 1;
         }},
-
+        
         setActiveIndex(index) { 
             this.activeIndex = index;
         },
         
-        
+        startAutorun() {
+            autorun = setInterval(() => {
+                this.activeIndex++;
+                if (this.activeIndex >= this.slides.length) {
+                    this.activeIndex = 0;
+                }
+            }, 2000);
+        },
 
+        stopAutorun() {
+            clearInterval(autorun);
+        },
+    },
+    created() {
+        this.startAutorun();
     }
 });
+    
+
 
 app.mount(`#app`)
 
@@ -69,56 +85,3 @@ app.mount(`#app`)
 
 
 
-
-// // SCORRIMENTO DEL CAROSELLO
-// let BtnNormal = document.querySelector(".normal")
-// BtnNormal.addEventListener("click",function(){
-//     BtnNormal = setInterval(() => {
-//         listHighlighted[activeIndex].classList.remove('active');
-//         listThumbs[activeIndex].classList.remove('active');
-//         titleHighlighted[activeIndex].classList.remove('active');
-//         textHighlighted[activeIndex].classList.remove('active');
-//         // decido il nuovo valore di active index
-//         activeIndex++;
-//         if (activeIndex >= listHighlighted.length) {
-//             activeIndex = 0;
-//         }
-//         // alla nuova immagine attiva aggiungo la classe active
-//         listHighlighted[activeIndex].classList.add('active');
-//         listThumbs[activeIndex].classList.add('active');
-//         titleHighlighted[activeIndex].classList.add('active');
-//         textHighlighted[activeIndex].classList.add('active');
-//     }, 2000);
-//     BtnReverse.classList.add("deactivate")
-//     document.querySelector(".choice-order").classList.add("deactivate")
-//     document.querySelector(".your-choice").classList.add("activate")
-//     document.querySelector(".normal").disabled = true
-// }
-// )
-    
-
-
-// let BtnReverse = document.querySelector(".reverse")
-// BtnReverse.addEventListener("click",function(){
-//     BtnReverse = setInterval(() => {
-//         listHighlighted[activeIndex].classList.remove('active');
-//         listThumbs[activeIndex].classList.remove('active');
-//         titleHighlighted[activeIndex].classList.remove('active');
-//         textHighlighted[activeIndex].classList.remove('active');
-//         // decido il nuovo valore di active index
-//         activeIndex--;
-//         if (activeIndex < 0) {
-//             activeIndex = listHighlighted.length - 1
-//         }
-//         // alla nuova immagine attiva aggiungo la classe active
-//         listHighlighted[activeIndex].classList.add('active');
-//         listThumbs[activeIndex].classList.add('active');
-//         titleHighlighted[activeIndex].classList.add('active');
-//         textHighlighted[activeIndex].classList.add('active');
-//     }, 2000);
-//     BtnNormal.classList.add("deactivate")
-//     document.querySelector(".choice-order").classList.add("deactivate")
-//     document.querySelector(".your-choice").classList.add("activate")
-//     document.querySelector(".reverse").disabled = true
-
-// })

@@ -13,7 +13,7 @@
         <div class="container">
             
             
-            <div v-for="(element, index) in slides" class="carousel">
+            <div v-for="(element, index) in slides" class="carousel" @mouseenter="stopAutorun" @mouseleave="startAutorun">
                 <div  class="highlighted">
                     <img :src="element.image" :class="{active: index == activeIndex}" alt="">
                     <div class="description">
