@@ -25,8 +25,8 @@
                 <!-- div con le miniature -->
                 <div  class="thumbs">
                     <div  class="controls">
-                        <i @click="showPrevSlide" class="bi bi-arrow-up-circle-fill btn btn-prev"></i>
-                        <i @click="showNextSlide" class="bi bi-arrow-down-circle-fill btn btn-next"></i>
+                        <i style="cursor: pointer;" @click="showPrevSlide" class="bi bi-arrow-up-circle-fill btn btn-prev"></i>
+                        <i style="cursor: pointer;" @click="showNextSlide" class="bi bi-arrow-down-circle-fill btn btn-next"></i>
                     </div>
                     
                         <img v-for="(element, index) in slides" class="thumb" 
