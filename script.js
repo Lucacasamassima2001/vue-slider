@@ -42,9 +42,9 @@ const app = Vue.createApp({
             this.activeIndex = this.slides.length - 1;
         }},
 
-        showThumb (index){
+        setActiveIndex(index) { 
             this.activeIndex = index;
-        }
+        },
 
     }
 });
@@ -66,94 +66,7 @@ app.mount(`#app`)
 
 
 
-// const containerHighlighted = document.querySelector('.highlighted');
-// const containerThumbs = document.querySelector('.thumbs');
 
-// for (let i = 0; i < images.length; i++) {
-//     let slide = images[i]
-
-// 	containerHighlighted.innerHTML += 
-//     `<img src="assets/${slide.image}" alt="" class="${i == 0 ? 'active' : ''}">
-//      <div class="description">
-//      <h2 class="${i == 0 ? 'active' : ''}">${slide.title}</h2>
-//      <p class="${i == 0 ? 'active' : ''}">${slide.text}</p>
-//      </div>`;
-// 	containerThumbs.innerHTML += `<img src="assets/${slide.image}" alt="" class="${i == 0 ? 'active' : ''}">`;
-// }
-
-
-// // selezionimo le immagini nell'html
-// const listHighlighted = document.querySelectorAll('.highlighted img');
-// const titleHighlighted = document.querySelectorAll('.description h2');
-// const textHighlighted = document.querySelectorAll('.description p');
-// // selezioniamo le miniature
-// const listThumbs = document.querySelectorAll('.thumbs img');
-// // selezioniamo i bottoni
-// const btnPrev = document.querySelector('.btn-prev');
-// const btnNext = document.querySelector('.btn-next');
-
-
-// // definito una variabile che rappresenta lo stato attuale del carosello
-// // cioe' l'indice dell'immagine attiva
-
-
-
-	// function shownextslide() {
-	// 	// dall'immagine e testo attivi tolgo la classe active
-	// 	image[activeIndex].classList.remove('active');
-    //     title[activeIndex].classList.remove('active');
-    //     text[activeIndex].classList.remove('active');
-	// 	listThumbs[activeIndex].classList.remove('active');
-	// 	// settiamo il nuovo valore di active index
-	// 	activeIndex++;
-	// 	if (activeIndex >= slides.length) {
-	// 		activeIndex = 0;
-	// 	}
-	// 	// alla nuova immagine e testo attivi aggiungiamo la classe active
-	// 	image[activeIndex].classList.add('active');
-    //     title[activeIndex].classList.add('active');
-    //     text[activeIndex].classList.add('active');
-	// 	listThumbs[activeIndex].classList.add('active');
-	// }
-
-
-// btnPrev.addEventListener('click',
-// 	function() {
-// 		// dall'immagine e testo attiva tolgo la classe active
-// 		listHighlighted[activeIndex].classList.remove('active');
-//         titleHighlighted[activeIndex].classList.remove('active');
-//         textHighlighted[activeIndex].classList.remove('active');
-// 		listThumbs[activeIndex].classList.remove('active');
-// 		// settiamo il nuovo valore di active index
-// 		activeIndex--;
-// 		if (activeIndex < 0) {
-// 			activeIndex = listHighlighted.length - 1;
-// 		}
-// 		// alla nuova immagine e testo attivi aggiungiamo la classe active
-// 		listHighlighted[activeIndex].classList.add('active');
-//         titleHighlighted[activeIndex].classList.add('active');
-//         textHighlighted[activeIndex].classList.add('active');
-// 		listThumbs[activeIndex].classList.add('active');
-// 	}
-// );
-
-// // ciclo per aggiungere gli event listeners alle miniature
-// for (let i = 0; i < listThumbs.length; i++) {
-// 	listThumbs[i].addEventListener('click',
-// 		function() {
-// 			console.log('cliccata la miniature in posizione ' + i)
-// 			listHighlighted[activeIndex].classList.remove('active');
-// 			listThumbs[activeIndex].classList.remove('active');
-//             titleHighlighted[activeIndex].classList.remove('active');
-//             textHighlighted[activeIndex].classList.remove('active');
-// 			activeIndex = i;
-// 			listHighlighted[activeIndex].classList.add('active');
-// 			listThumbs[activeIndex].classList.add('active');
-//             titleHighlighted[activeIndex].classList.add('active');
-//             textHighlighted[activeIndex].classList.add('active');
-// 		}
-// 	)
-// }
 
 // // SCORRIMENTO DEL CAROSELLO
 // let BtnNormal = document.querySelector(".normal")
